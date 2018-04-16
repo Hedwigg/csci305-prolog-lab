@@ -118,3 +118,5 @@ parent('Antony Armstrong-Jones', 'Viscount Linley').
 parent('Princess Margaret', 'Viscount Linley').
 parent('Antony Armstrong-Jones', 'Lady Sarah Chatto').
 parent('Princess Margaret', 'Lady Sarah Chatto').
+
+parent('testParent', 'testChild').
