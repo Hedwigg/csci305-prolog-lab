@@ -123,9 +123,11 @@ parent('Princess Margaret', 'Lady Sarah Chatto').
 
 
 
-parent('lela', 'merna').
+%parent('lela', 'merna').
 parent('merna', 'troy').
 parent('troy', 'morgan').
+parent('merna', 'joel').
+
 
 born('steve', 1950).
 born('joel', 1996).
