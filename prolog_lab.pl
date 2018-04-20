@@ -1,5 +1,7 @@
-% First_name Last_name
-% CSCI 305 Prolog Lab 2
+% Joel Lechman
+% CSCI 305 Prolog Lab
+
+
 
 %Mother/2 (father, child) iff F is a parent of C and F is male.
 mother(M,C) :-
@@ -11,9 +13,9 @@ father(F,C) :-
   parent(F,C),
   male(F).
 
-%Spouse/2 (person1, person2) true if p1 is married to p2 or if p2 is married to p1
+%Spouse/2 (person1, person2) true if p1 is married to p2 OR if p2 is married to p1
 spouse(P1,P2) :-
-  married(P1,P2),
+  married(P1,P2);
   married(P2,P1).
 
 %child/2 (child, parent) iff parent is parent of child.
@@ -32,8 +34,8 @@ daughter(C,P) :-
 
 %sibling/2 (child1, child2) iff child1 and child2 have same parent. Note: a child cannot be their own sibling.
 sibling(C1,C2) :-
-  parent(OneParent,C1),
-  parent(OneParent,C2),
+  parent(Parent,C1),
+  parent(Parent,C2),
   not(C1 = C2).
 
 
@@ -130,6 +132,30 @@ descendent(Descendent,Person) :-
 
 
 %older/2 (X,Y) indicates person X is older than person Y
+older(X,Y) :-
+  born(X,BornX),
+  born(Y,BornY),
+  died(X,DiedX),
+  died(Y,DiedY),
+  AgeX is (DiedX - BornX),
+  AgeY is (DiedY - BornY),
+  AgeX > AgeY.
 
 
 %younger/2(X,Y) indicated person X is younger than person Y
+younger(X,Y) :-
+  born(X,BornX),
+  born(Y,BornY),
+  died(X,DiedX),
+  died(Y,DiedY),
+  AgeX is (DiedX - BornX),
+  AgeY is (DiedY - BornY),
+  AgeX < AgeY.
+
+%NOT WORKING
+%regentWhenBorn/2 returns the king or queen (X) when y was born
+regentWhenBorn(X,Y) :-
+  born(Y,Year),
+  reigned(X,Start,End),
+  Year<=End,
+  Year>=Start.

@@ -1,0 +1,47 @@
+What is the result of query: ?- father(X, 'Queen Elizabeth II').?
+
+What is the result of query: ?- grandmother(X, 'Queen Elizabeth II').?
+
+What is the result of query: ?- grandfather(X, 'Queen Elizabeth II').?
+
+What is the result of query: ?- grandparent(X, 'Queen Elizabeth II').?
+
+What is the result of query: ?- grandparent('Queen Elizabeth II', X).?
+
+What is the result of query: ?- sibling(X, 'Queen Elizabeth II').?
+
+What is the result of query: ?- son(X, 'Queen Elizabeth II').?
+
+What is the result of query: ?- daughter(X, 'Queen Elizabeth II').?
+
+What is the result of query: ?- aunt(X, 'Lady Diana Spencer').?
+
+What is the result of query: ?- spouse(X, 'Prince William').?
+
+What is the result of query: ?- ancestor(X, 'Prince Henry').?
+
+What is the result of query: ?- descendant('Queen Victoria', Y).?
+
+What is the result of query: ?- older('Prince Henry', 'Prince William').?
+
+What is the result of query: ?- older(X, 'Queen Elizabeth II').?
+
+What is the result of query: ?- regentWhenBorn(X, 'Queen Elizabeth II').?
+
+
+
+
+
+
+The following questions are for feedback and evaluation purposes. Points are awarded for any sincere answer.
+
+
+Name something you like about Prolog. Explain.
+
+Name something you dislike about Prolog. Explain.
+
+Did you enjoy this lab? Which aspects did you like and/or dislike?
+
+Approximately how many hours did you spend on this lab?
+
+Do you think you will use Prolog again? For which type(s) of project(s)?

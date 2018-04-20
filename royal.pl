@@ -126,3 +126,8 @@ parent('Princess Margaret', 'Lady Sarah Chatto').
 parent('lela', 'merna').
 parent('merna', 'troy').
 parent('troy', 'morgan').
+
+born('steve', 1950).
+born('joel', 1996).
+died('steve', 2050).
+died('joel', 2050).
