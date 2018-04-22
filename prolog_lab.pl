@@ -125,28 +125,18 @@ descendant(Descendent,Person) :-
   descendant(Descendent,Child).
 
 
-%older/2 (X,Y) indicates person X is older than person Y
+%older/2 (X,Y) indicates person X is older than person Y, i.e. birth year of x is less than the birth year of y
 older(X,Y) :-
   born(X,BornX),
   born(Y,BornY),
-  died(X,DiedX),
-  died(Y,DiedY),
-  %set ageX and ageY based off of born and died values for that person. A person's age is dependent on if they have died or not.
-  AgeX is (DiedX - BornX),
-  AgeY is (DiedY - BornY),
-  AgeX > AgeY.
+  BornX < BornY.
 
 
-%younger/2(X,Y) indicated person X is younger than person Y
+%younger/2(X,Y) indicated person X is younger than person Y. i.e. birth year of x is greater than the birth year of y
 younger(X,Y) :-
   born(X,BornX),
   born(Y,BornY),
-  died(X,DiedX),
-  died(Y,DiedY),
-  %set ageX and ageY based off of born and died values for that person. A person's age is dependent on if they have died or not. I.e. You do not continue to age after you have died.
-  AgeX is (DiedX - BornX),
-  AgeY is (DiedY - BornY),
-  AgeX < AgeY.
+  BornX > BornY.
 
 %regentWhenBorn/2 returns the king or queen (X) when y was born
 regentWhenBorn(X,Y) :-

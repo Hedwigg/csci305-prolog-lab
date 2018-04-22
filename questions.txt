@@ -29,7 +29,6 @@ What is the result of query: ?- daughter(X, 'Queen Elizabeth II').?
 
 What is the result of query: ?- aunt(X, 'Lady Diana Spencer').?
   FALSE
-  TODO: ????? No parents so no aunt?
 
 
 What is the result of query: ?- spouse(X, 'Prince William').?
@@ -44,7 +43,7 @@ What is the result of query: ?- ancestor(X, 'Prince Henry').?
     X = 'Lady Elizabeth Bowes-Lyon' ;
     X = 'King George V' ;
     X = 'Queen Mary' ;
-    X =  'King Edward VII' ;
+    X = 'King Edward VII' ;
     X = 'Princess Alexandra of Denmark' ;
     X = 'Prince Albert' ;
     X = 'Queen Victoria' ;
@@ -52,7 +51,6 @@ What is the result of query: ?- ancestor(X, 'Prince Henry').?
 
 What is the result of query: ?- descendant('Queen Victoria', Y).?
   False
-  TODO: ????
 
 
 What is the result of query: ?- older('Prince Henry', 'Prince William').?
@@ -60,8 +58,17 @@ What is the result of query: ?- older('Prince Henry', 'Prince William').?
 
 
 What is the result of query: ?- older(X, 'Queen Elizabeth II').?
-  False
-  TODO: ????
+  X = 'Queen Victoria' ;
+  X = 'Princess Alexandra of Denmark' ;
+  X = 'Queen Mary' ;
+  X = 'Mrs Simpson' ;
+  X = 'Lady Elizabeth Bowes-Lyon' ;
+  X = 'Prince Albert' ;
+  X = 'King Edward VII' ;
+  X = 'King George V' ;
+  X = 'King Edward VIII' ;
+  X = 'King George VI' ;
+  X = 'Prince Philip'
 
 What is the result of query: ?- regentWhenBorn(X, 'Queen Elizabeth II').?
   X = 'King George V' ;
