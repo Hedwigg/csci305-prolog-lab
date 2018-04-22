@@ -131,7 +131,7 @@ older(X,Y) :-
   born(Y,BornY),
   died(X,DiedX),
   died(Y,DiedY),
-  %set ageX and ageY based off of born and died values for that person.
+  %set ageX and ageY based off of born and died values for that person. A person's age is dependent on if they have died or not.
   AgeX is (DiedX - BornX),
   AgeY is (DiedY - BornY),
   AgeX > AgeY.
@@ -143,7 +143,7 @@ younger(X,Y) :-
   born(Y,BornY),
   died(X,DiedX),
   died(Y,DiedY),
-  %set ageX and ageY based off of born and died values for that person.
+  %set ageX and ageY based off of born and died values for that person. A person's age is dependent on if they have died or not. I.e. You do not continue to age after you have died.
   AgeX is (DiedX - BornX),
   AgeY is (DiedY - BornY),
   AgeX < AgeY.
@@ -154,3 +154,13 @@ regentWhenBorn(X,Y) :-
   reigned(X,Start,End), %get all reigned times
   Year@=<End,     %compare born year to reigned times.
   Year@>=Start.
+
+%________________________________________________________________________________
+% Extra Credit:
+
+
+%cousin/2   (P1, P2) p1 is a cousin of p2 if their parent is a sibling of p2's parent. i.e. people who's most recent common ancestor is a grandparent. (parent's parent).
+cousin(P1,P2) :-
+  parent(X,P1),
+  parent(Y,P2),
+  sibling(X,Y).

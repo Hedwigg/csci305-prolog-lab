@@ -66,7 +66,16 @@ What is the result of query: ?- older(X, 'Queen Elizabeth II').?
 What is the result of query: ?- regentWhenBorn(X, 'Queen Elizabeth II').?
   X = 'King George V' ;
 
+________________________________________________________________________________
+Extra Credit:
+EC1. What is the result of query: ?- cousin(X, 'Prince Charles').
+  X = 'Viscount Linley' ;
+  X = 'Lady Sarah Chatto' ;
 
+
+EC2. What is the result of query: ?- cousin('Prince Charles', X).
+  X = 'Viscount Linley' ;
+  X = 'Lady Sarah Chatto' ;
 ________________________________________________________________________________
 
 Name something you like about Prolog. Explain.
