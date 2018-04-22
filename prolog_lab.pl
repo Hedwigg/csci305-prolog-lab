@@ -67,7 +67,8 @@ uncle(A,C) :-
 %aunt/2(adult, child) *** BY BLOOD*** iff child's parent is a sibling of adult and adult is FEMALE.
 aunt(A,C) :-
   parent(P,C),
-  sister(A,P).
+  sibling(A,P),
+  female(A).
 
 %aunt/2(adult,child) *** BY MARRIAGE*** iff adult is married to child's parent's sibling and is FEMALE.
 aunt(A,C) :-
@@ -115,20 +116,13 @@ ancestor(Ancestor,Person) :-
 
 %decendant/2(descendent, person) descendent is a decendant of person if they are their child, or the child of the person's child etc(two rules/recursion.).
 %base case, (if descendent is the child of person.)
-descendent(Descendent,Person) :-
+descendant(Descendent,Person) :-
   child(Descendent,Person).
 
 %recursive case
-descendent(Descendent,Person) :-
+descendant(Descendent,Person) :-
   child(Child,Person),
-  descendent(Descendent,Child).
-
-
-
-%  TODO  aunts and uncles currently return more than one value with current test set?
-%  TODO  grandfather and grandchild return more than one value with current test set?
-%  TODO descendent returns two values sometimes (merna,lela).
-
+  descendant(Descendent,Child).
 
 
 %older/2 (X,Y) indicates person X is older than person Y
@@ -137,6 +131,7 @@ older(X,Y) :-
   born(Y,BornY),
   died(X,DiedX),
   died(Y,DiedY),
+  %set ageX and ageY based off of born and died values for that person.
   AgeX is (DiedX - BornX),
   AgeY is (DiedY - BornY),
   AgeX > AgeY.
@@ -148,14 +143,14 @@ younger(X,Y) :-
   born(Y,BornY),
   died(X,DiedX),
   died(Y,DiedY),
+  %set ageX and ageY based off of born and died values for that person.
   AgeX is (DiedX - BornX),
   AgeY is (DiedY - BornY),
   AgeX < AgeY.
 
-%NOT WORKING
 %regentWhenBorn/2 returns the king or queen (X) when y was born
 regentWhenBorn(X,Y) :-
-  born(Y,Year),
-  reigned(X,Start,End),
-  Year<=End,
-  Year>=Start.
+  born(Y,Year),         %get year to query
+  reigned(X,Start,End), %get all reigned times
+  Year@=<End,     %compare born year to reigned times.
+  Year@>=Start.

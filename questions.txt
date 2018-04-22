@@ -1,47 +1,85 @@
 What is the result of query: ?- father(X, 'Queen Elizabeth II').?
+  X = 'King George VI' ;
 
 What is the result of query: ?- grandmother(X, 'Queen Elizabeth II').?
+  X = 'Queen Mary' ;
 
 What is the result of query: ?- grandfather(X, 'Queen Elizabeth II').?
+  X = 'King George V' ;
 
 What is the result of query: ?- grandparent(X, 'Queen Elizabeth II').?
+  X = 'King George V' ;
+  X = 'Queen Mary' ;
 
 What is the result of query: ?- grandparent('Queen Elizabeth II', X).?
+  X = 'Prince William' ;
+  X = 'Prince Henry' ;
 
 What is the result of query: ?- sibling(X, 'Queen Elizabeth II').?
+  X = 'Princess Margaret' ;
 
 What is the result of query: ?- son(X, 'Queen Elizabeth II').?
+  X = 'Prince Charles' ;
+  X = 'Prince Andrew' ;
+  X = 'Prince Edward'.
 
 What is the result of query: ?- daughter(X, 'Queen Elizabeth II').?
+  X = 'Princess Anne' ;
+
 
 What is the result of query: ?- aunt(X, 'Lady Diana Spencer').?
+  FALSE
+  TODO: ????? No parents so no aunt?
+
 
 What is the result of query: ?- spouse(X, 'Prince William').?
+  X = 'Catherine Middleton'.
 
 What is the result of query: ?- ancestor(X, 'Prince Henry').?
+    X = 'Prince Charles' ;
+    X = 'Lady Diana Spencer' ;
+    X = 'Queen Elizabeth II' ;
+    X = 'Prince Philip' ;
+    X = 'King George VI' ;
+    X = 'Lady Elizabeth Bowes-Lyon' ;
+    X = 'King George V' ;
+    X = 'Queen Mary' ;
+    X =  'King Edward VII' ;
+    X = 'Princess Alexandra of Denmark' ;
+    X = 'Prince Albert' ;
+    X = 'Queen Victoria' ;
+
 
 What is the result of query: ?- descendant('Queen Victoria', Y).?
+  False
+  TODO: ????
+
 
 What is the result of query: ?- older('Prince Henry', 'Prince William').?
+  False
+
 
 What is the result of query: ?- older(X, 'Queen Elizabeth II').?
+  False
+  TODO: ????
 
 What is the result of query: ?- regentWhenBorn(X, 'Queen Elizabeth II').?
+  X = 'King George V' ;
 
 
-
-
-
-
-The following questions are for feedback and evaluation purposes. Points are awarded for any sincere answer.
-
+________________________________________________________________________________
 
 Name something you like about Prolog. Explain.
+  I like how powerful unions actually are in prolog. In other languages you don't really use unions to do a lot of things but prolog harnesses their full potential and you can create some really interesting functions that way.
 
 Name something you dislike about Prolog. Explain.
+  Logic statements are harder to come up with because you aren't giving the computer steps to compute. You have to come up with more complicated queries to find the answer you need.
 
 Did you enjoy this lab? Which aspects did you like and/or dislike?
+  I did enjoy this lab. It was fairly straightforward and because you can put in your own rules for your own family it was easy to test and debug. I didn't really like using the swipl-win program because it was a little buggy and confusing at times but thats what happens when you run windows so it wasn't a huge deal.
 
 Approximately how many hours did you spend on this lab?
+~ 6 hours.
 
 Do you think you will use Prolog again? For which type(s) of project(s)?
+  I'm not sure if I will ever use prolog again personally but if I was ever involved in software that uses relational databases I'm sure prolog would be a great option for me.
