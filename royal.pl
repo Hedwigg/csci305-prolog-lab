@@ -118,20 +118,3 @@ parent('Antony Armstrong-Jones', 'Viscount Linley').
 parent('Princess Margaret', 'Viscount Linley').
 parent('Antony Armstrong-Jones', 'Lady Sarah Chatto').
 parent('Princess Margaret', 'Lady Sarah Chatto').
-
-
-
-
-
-parent('lela', 'merna').
-parent('lela', 'fred').
-parent('merna', 'troy').
-parent('troy', 'morgan').
-parent('merna', 'joel').
-parent('fred', 'fson').
-
-
-born('steve', 1950).
-born('joel', 1996).
-died('steve', 2050).
-died('joel', 2050).
