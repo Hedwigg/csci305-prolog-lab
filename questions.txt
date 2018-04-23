@@ -1,3 +1,7 @@
+Joel Lechman
+Prolog lab questions
+4/23
+
 What is the result of query: ?- father(X, 'Queen Elizabeth II').?
   X = 'King George VI' ;
 
